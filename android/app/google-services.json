@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1020777710069",
+    "project_id": "skill-stack-5e275",
+    "storage_bucket": "skill-stack-5e275.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020777710069:android:30915d4d5552a32cb7a0bc",
+        "android_client_info": {
+          "package_name": "com.student.skillstack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020777710069-up7hcnem5e16udr0oov142d68klt0699.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.student.skillstack",
+            "certificate_hash": "f7417ba2f1c945be3c46e1bc704d6cbf0c1c0e7e"
+          }
+        },
+        {
+          "client_id": "1020777710069-k6ar2hfualkkolr5ph35cr36i8b8s7gt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBowF90RClbUcv6d6VC9hNDkxgwjnIn70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020777710069-k6ar2hfualkkolr5ph35cr36i8b8s7gt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1020777710069-n1gjoa616gfr5ddag82ecuobtfloqhrf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.itMcq"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
