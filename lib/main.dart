@@ -15,6 +15,7 @@ import 'package:it_mcq/features/bookmark/bookmark_cubit.dart';
 import 'package:it_mcq/features/home/dash_board.dart';
 import 'package:it_mcq/features/quiz/bloc/question_cubit.dart';
 import 'package:it_mcq/features/result/cubit/exam_cubit.dart';
+import 'package:it_mcq/features/subtopics/sub_topics_mcq_screen.dart';
 import 'package:it_mcq/features/topics/bloc/topic_cubit.dart';
 import 'package:it_mcq/firebase_options.dart';
 import 'core/theme/theme_cubit.dart';
@@ -42,6 +43,7 @@ Future<void> main() async {
         BlocProvider(create: (_) => QuestionCubit()),
         BlocProvider(create: (_) => BookmarkCubit(box)),
         BlocProvider(create: (_) => TopicCubit()..loadTopics()),
+        BlocProvider(create: (_) => SubtopicsMCQCubit()),
       ],
       child: MyApp(),
     ),

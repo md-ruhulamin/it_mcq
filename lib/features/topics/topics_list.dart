@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:it_mcq/core/model/topic_model.dart';
 import 'package:it_mcq/core/router/app_navigator.dart';
+import 'package:it_mcq/data/topics_maping.dart';
 import 'package:it_mcq/features/quiz/quiz_practice_screen.dart';
 import 'package:it_mcq/features/topics/bloc/topic_cubit.dart';
 
@@ -11,7 +12,6 @@ class TopicListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
       body: BlocBuilder<TopicCubit, List<TopicModel>>(
         builder: (context, topics) {
           if (topics.isEmpty) {
@@ -24,8 +24,9 @@ class TopicListScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final topic = topics[index];
               return Card(
+                color: Colors.white,
                 margin: const EdgeInsets.symmetric(vertical: 8),
-                elevation: 2,
+
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -94,7 +95,10 @@ class TopicListScreen extends StatelessWidget {
                           Expanded(
                             child: OutlinedButton(
                               onPressed: () {
-                               AppNavigator.goToQuizPractice(context,topicsId: "t001");
+                                AppNavigator.goToQuizPractice(
+                                  context,
+                                  topicsId: "t001",
+                                );
                               },
                               style: OutlinedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(
@@ -117,33 +121,37 @@ class TopicListScreen extends StatelessWidget {
                             ),
                           ),
 
-                  
-                            const SizedBox(width: 8),
-                            Expanded(
-                              child: OutlinedButton(
-                                onPressed: () {},
-                                style: OutlinedButton.styleFrom(
-                                  padding: const EdgeInsets.symmetric(
-                                    vertical: 12,
-                                  ),
-                                  side: const BorderSide(
-                                    color: Color(0xFFFFE0B2),
-                                  ),
-                                  backgroundColor: const Color(0xFFFFF3E0),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: OutlinedButton(
+                              onPressed: () {
+                                print("Topics Id ${topic.id}");
+                                AppNavigator.goToSubtopics(
+                                  context,
+                                  topicsId: topic.id,
+                                );
+                              },
+                              style: OutlinedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 12,
                                 ),
-                                child: const Text(
-                                  'All Subtopics',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    color: Colors.black87,
-                                  ),
+                                side: const BorderSide(
+                                  color: Colors.deepPurple,
+                                ),
+                                //  backgroundColor: const Color(0xFFFFF3E0),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                              ),
+                              child: const Text(
+                                'Subtopics',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black87,
                                 ),
                               ),
                             ),
-                          
+                          ),
 
                           const SizedBox(width: 8),
                           Expanded(

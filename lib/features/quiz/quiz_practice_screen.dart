@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:it_mcq/component/custome_btn.dart';
 import 'package:it_mcq/core/model/question.dart';
+import 'package:it_mcq/data/topics_maping.dart';
 import 'package:it_mcq/features/bookmark/bookmark_cubit.dart';
 import 'package:it_mcq/features/quiz/bloc/question_cubit.dart';
+import 'package:it_mcq/features/quiz/custom_text.dart';
 import 'package:it_mcq/features/quiz/quiz_result.dart';
+import 'package:it_mcq/utility/widgets/theme_text.dart';
 
 class QuizPracticeScreen extends StatefulWidget {
   String topicId;
@@ -48,8 +51,8 @@ class _QuizPracticeScreenState extends State<QuizPracticeScreen> {
           elevation: 0,
           backgroundColor: Colors.white,
 
-          title: const Text(
-            'Networks Quiz - Practice',
+          title: Text(
+            topicsMap[widget.topicId]!,
             style: TextStyle(
               color: Colors.black,
               fontSize: 18,
@@ -66,63 +69,125 @@ class _QuizPracticeScreenState extends State<QuizPracticeScreen> {
 
             return Column(
               children: [
-                // Info Banner
                 Container(
                   width: double.infinity,
-                  color: Colors.blue.shade50,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 12,
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.shade50,
+                    border: Border(
+                      bottom: BorderSide(color: Colors.blue.shade100, width: 1),
+                    ),
                   ),
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.info_outline,
-                        color: Colors.blue.shade700,
-                        size: 20,
-                      ),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          'Practice Mode: You can see answers and explanations',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Colors.blue.shade900,
-                          ),
-                        ),
-                      ),
+                      // Progress with minimal icon
                       Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 8,
-                        ),
-                        margin: const EdgeInsets.only(
-                          right: 12,
-                          top: 8,
-                          bottom: 8,
+                          horizontal: 12,
+                          vertical: 6,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.green.shade50,
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.green.shade200),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: Colors.blue.shade200),
                         ),
                         child: Row(
                           children: [
                             Icon(
-                              Icons.check_circle,
-                              color: Colors.green.shade700,
-                              size: 18,
+                              Icons.check_circle_rounded,
+                              color: Colors.green.shade600,
+                              size: 16,
                             ),
                             const SizedBox(width: 6),
                             Text(
                               '${_getAnsweredCount()}/${questions.length}',
                               style: TextStyle(
-                                color: Colors.green.shade700,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
+                                color: Colors.grey.shade800,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 13,
                               ),
                             ),
                           ],
+                        ),
+                      ),
+
+                      const SizedBox(width: 12),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: Colors.blue.shade200),
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.auto_awesome_rounded,
+                              color: Colors.green.shade600,
+                              size: 16,
+                            ),
+                            const SizedBox(width: 6),
+                            Text(
+                              'Practice Mode',
+                              style: TextStyle(
+                                color: Colors.grey.shade800,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 13,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Info text - compact
+                      const SizedBox(width: 12),
+
+                      // Compact toggle button
+                      SizedBox(
+                        height: 32,
+                        child: FilledButton.tonal(
+                          onPressed: () {
+                            setState(() {
+                              showAnswerAll = !showAnswerAll;
+                              for (final question in questions) {
+                                showAnswers[question.id] = showAnswerAll;
+                              }
+                            });
+                          },
+                          style: FilledButton.styleFrom(
+                            backgroundColor: showAnswerAll
+                                ? Colors.grey.shade300
+                                : Colors.blue.shade100,
+                            foregroundColor: showAnswerAll
+                                ? Colors.grey.shade700
+                                : Colors.blue.shade800,
+                            padding: const EdgeInsets.symmetric(horizontal: 12),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                showAnswerAll
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                                size: 16,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                showAnswerAll ? 'Hide All' : 'Show All',
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -160,84 +225,10 @@ class _QuizPracticeScreenState extends State<QuizPracticeScreen> {
                     },
                   ),
                 ),
-
-                // Bottom Action Bar
-                Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
-                        blurRadius: 10,
-                        offset: const Offset(0, -2),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: OutlinedButton.icon(
-                          onPressed: _resetQuiz,
-                          icon: const Icon(Icons.refresh),
-                          label: const Text('Reset All'),
-                          style: OutlinedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(vertical: 14),
-                            side: const BorderSide(color: Colors.grey),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: ElevatedButton.icon(
-                          onPressed: () {
-                            if (showAnswerAll) {
-                              for (int i = 0; i < questions.length; i += 1) {
-                                setState(() {
-                                  showAnswerAll = false;
-                                  showAnswers[questions[i].id] = false;
-                                });
-                              }
-                            } else {
-                              for (int i = 0; i < questions.length; i += 1) {
-                                setState(() {
-                                  showAnswerAll = true;
-                                  showAnswers[questions[i].id] = true;
-                                });
-                              }
-                            }
-                          },
-                          icon: const Icon(Icons.check_circle_outline),
-                          label: showAnswerAll
-                              ? Text('Hide All Answer')
-                              : Text('Show All Answer'),
-                          style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(vertical: 14),
-                            backgroundColor: Colors.blue.shade600,
-                            foregroundColor: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
               ],
             );
           },
         ),
-      ),
-    );
-  }
-
-  void _resetQuiz() {
-    setState(() {
-      userAnswers.clear();
-      showAnswers.clear();
-    });
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Quiz reset successfully!'),
-        duration: Duration(seconds: 2),
       ),
     );
   }

@@ -39,7 +39,9 @@ class HomePage extends StatelessWidget {
                     Text(
                       'Ready to study?',
                       style: TextStyle(
-                        color: context.isDark ? Colors.white.withOpacity(0.7) : Colors.black87.withOpacity(0.7) ,
+                        color: context.isDark
+                            ? Colors.white.withOpacity(0.7)
+                            : Colors.black87.withOpacity(0.7),
                       ),
                     ),
                   ],
@@ -118,27 +120,7 @@ class HomePage extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               childAspectRatio: 3.4,
               shrinkWrap: true,
-              children: List.generate(8, (index) {
-                final icons = [
-                  Icons.data_array,
-                  Icons.data_exploration,
-                  Icons.code,
-                  Icons.storage,
-                  Icons.memory,
-                  Icons.router,
-                  Icons.cloud_queue,
-                  Icons.security,
-                ];
-                final titles = [
-                  't001',
-                  't002',
-                  't003',
-                  't004',
-                  't005',
-                  't006',
-                  't007',
-                  't007',
-                ];
+              children: List.generate(topicsMap.length, (index) {
                 return CategoryTile(
                   onTap: () {
                     print(titles[index]);

@@ -7,6 +7,7 @@ import 'package:it_mcq/core/model/answer_model.dart';
 import 'package:it_mcq/core/model/exam_result.dart';
 import 'package:it_mcq/core/model/question.dart';
 import 'package:it_mcq/core/router/app_navigator.dart';
+import 'package:it_mcq/data/topics_maping.dart';
 import 'package:it_mcq/features/bookmark/bookmark_cubit.dart';
 import 'package:it_mcq/features/quiz/bloc/question_cubit.dart';
 import 'package:it_mcq/features/quiz/custom_text.dart';
@@ -51,8 +52,8 @@ class _LiveQuizScreenState extends State<LiveQuizScreen> {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-          title: const Text(
-            'Networks Quiz - Practice',
+          title: Text(
+            topicsMap[widget.topicsId]!,
             style: TextStyle(
               color: Colors.black,
               fontSize: 18,
@@ -519,7 +520,6 @@ class QuestionCard extends StatelessWidget {
               ),
             ),
           ), // Action Buttons
-         
         ],
       ),
     );

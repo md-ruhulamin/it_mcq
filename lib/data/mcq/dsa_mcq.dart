@@ -1,5 +1,5 @@
 
-const dsquestion=[
+const dsMCQquestion=[
   {
     "id": "q1",
     "quizId": "dsa_quiz_1",

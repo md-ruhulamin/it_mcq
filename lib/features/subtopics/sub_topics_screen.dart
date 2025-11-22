@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:it_mcq/core/router/app_navigator.dart';
 import 'package:it_mcq/core/theme/theme_extension.dart';
+import 'package:it_mcq/data/topics_maping.dart';
 import 'package:it_mcq/features/subtopics/cubit/sub_topic_state.dart';
 import 'package:it_mcq/features/subtopics/cubit/sub_topics_cubit.dart';
+import 'package:it_mcq/features/subtopics/sub_topics_mcq_screen.dart';
 import 'package:it_mcq/utility/widgets/theme_text.dart';
 
 class SubTopicsPage extends StatelessWidget {
@@ -17,7 +19,17 @@ class SubTopicsPage extends StatelessWidget {
     return BlocProvider(
       create: (_) => SubTopicCubit()..loadSubTopics(topicId: topicsId),
       child: Scaffold(
-        appBar: AppBar(title: const Text("Data Structure "), elevation: 0),
+        appBar: AppBar(
+          title: Text(
+            topicsMap[topicsId]!,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          elevation: 0,
+        ),
         body: BlocBuilder<SubTopicCubit, SubTopicState>(
           builder: (context, state) {
             if (state is SubTopicLoading) {
@@ -142,7 +154,7 @@ class SubTopicsPage extends StatelessWidget {
                                     ),
                                     const SizedBox(width: 6),
                                     Text(
-                                      "${sub.totalConcepts} Concepts",
+                                      "${sub.concepts!.length} Concepts",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodySmall
@@ -164,11 +176,20 @@ class SubTopicsPage extends StatelessWidget {
                             CategoryTile(
                               title: "Practice MCQ",
                               icon: Icons.book,
+
                               onTap: () {
-                                AppNavigator.goToQuizPractice(
+                                Navigator.push(
                                   context,
-                                  topicsId: topicsId,
+                                  MaterialPageRoute(
+                                    builder: (context) => SubtopicMCQScreen(
+                                      subtopicId: sub.id!,
+                                    ),
+                                  ),
                                 );
+                                // AppNavigator.goToQuizPractice(
+                                //   context,
+                                //   topicsId: topicsId,
+                                // );
                               },
                             ),
                             const SizedBox(width: 10),
