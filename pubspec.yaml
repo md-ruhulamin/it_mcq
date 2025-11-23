@@ -40,7 +40,7 @@ dependencies:
   google_sign_in: ^6.3.0
   sign_in_with_apple: ^7.0.1
   map_location_picker: ^2.0.3
- 
+  dio:
   
   flutter_chat_ui: ^1.6.15
   flutter_chat_types: ^3.6.2

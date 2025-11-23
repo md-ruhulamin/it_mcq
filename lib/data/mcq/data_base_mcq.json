@@ -1,0 +1,474 @@
+[
+  {
+    "id": "db_q1",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st001",
+    "question": "Which SQL clause is used to filter records?",
+    "options": ["WHERE", "HAVING", "GROUP BY", "ORDER BY"],
+    "correctIndex": 0,
+    "explanation":
+        "The WHERE clause is used to filter records based on specified conditions before any grouping occurs.",
+    "difficulty": "easy",
+    "tags": ["sql", "filtering", "basics"],
+    "isActive": true,
+    "reference": "SQL Fundamentals - W3Schools"
+},
+  {
+    "id": "db_q2",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st001",
+    "question": "What does the SQL JOIN clause do?",
+    "options": [
+      "Deletes records from multiple tables",
+      "Combines rows from two or more tables",
+      "Creates a new table",
+      "Updates multiple tables"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "JOIN clause is used to combine rows from two or more tables based on a related column between them.",
+    "difficulty": "easy",
+    "tags": ["sql", "join", "basics"],
+    "isActive": true,
+    "reference": "Database System Concepts - Silberschatz"
+  },
+  {
+    "id": "db_q3",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st002",
+    "question": "What is the primary goal of database normalization?",
+    "options": [
+      "To increase data redundancy",
+      "To reduce data redundancy and improve data integrity",
+      "To make queries slower",
+      "To increase storage space"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "Normalization aims to reduce data redundancy and improve data integrity by organizing data efficiently.",
+    "difficulty": "easy",
+    "tags": ["normalization", "database design"],
+    "isActive": true,
+    "reference": "Database Design - Elmasri & Navathe"
+  },
+  {
+    "id": "db_q4",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st002",
+    "question": "A table is in First Normal Form (1NF) if:",
+    "options": [
+      "It has no repeating groups and all attributes are atomic",
+      "It has a primary key",
+      "All non-key attributes are fully dependent on the primary key",
+      "It has no transitive dependencies"
+    ],
+    "correctIndex": 0,
+    "explanation":
+        "1NF requires that all attributes contain only atomic values and there are no repeating groups.",
+    "difficulty": "medium",
+    "tags": ["normalization", "1NF", "normal forms"],
+    "isActive": true,
+    "reference": "Database System Concepts - Silberschatz"
+  },
+  {
+    "id": "db_q5",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st002",
+    "question": "What is a primary key?",
+    "options": [
+      "A key that can have NULL values",
+      "A unique identifier for each record in a table",
+      "A key that references another table",
+      "A key used only for indexing"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "A primary key uniquely identifies each record in a table and cannot contain NULL values.",
+    "difficulty": "easy",
+    "tags": ["keys", "primary key", "database design"],
+    "isActive": true,
+    "reference": "SQL Fundamentals"
+  },
+  {
+    "id": "db_q6",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st002",
+    "question": "What is the purpose of a foreign key?",
+    "options": [
+      "To uniquely identify records",
+      "To establish relationships between tables",
+      "To speed up queries",
+      "To prevent data entry"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "A foreign key is used to establish and enforce a link between data in two tables, maintaining referential integrity.",
+    "difficulty": "easy",
+    "tags": ["keys", "foreign key", "relationships"],
+    "isActive": true,
+    "reference": "Database Design Fundamentals"
+  },
+  {
+    "id": "db_q7",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st003",
+    "question": "What does ACID stand for in database transactions?",
+    "options": [
+      "Atomicity, Consistency, Isolation, Durability",
+      "Access, Control, Integrity, Data",
+      "Automatic, Consistent, Isolated, Durable",
+      "Atomicity, Control, Isolation, Data"
+    ],
+    "correctIndex": 0,
+    "explanation":
+        "ACID stands for Atomicity, Consistency, Isolation, and Durability - the four key properties that guarantee reliable transaction processing.",
+    "difficulty": "easy",
+    "tags": ["transactions", "ACID", "database theory"],
+    "isActive": true,
+    "reference": "Database System Concepts - Silberschatz"
+  },
+  {
+    "id": "db_q8",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st003",
+    "question":
+        "Which ACID property ensures that a transaction is treated as a single unit?",
+    "options": ["Consistency", "Atomicity", "Isolation", "Durability"],
+    "correctIndex": 1,
+    "explanation":
+        "Atomicity ensures that a transaction is treated as a single, indivisible unit - either all operations succeed or all fail.",
+    "difficulty": "medium",
+    "tags": ["transactions", "ACID", "atomicity"],
+    "isActive": true,
+    "reference": "Transaction Processing Concepts"
+  },
+  {
+    "id": "db_q9",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st003",
+    "question": "What is the primary purpose of database indexing?",
+    "options": [
+      "To increase storage space",
+      "To speed up data retrieval operations",
+      "To enforce data integrity",
+      "To backup data"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "Indexing creates data structures that improve the speed of data retrieval operations at the cost of additional storage and slower writes.",
+    "difficulty": "easy",
+    "tags": ["indexing", "performance", "optimization"],
+    "isActive": true,
+    "reference": "Database Performance Tuning"
+  },
+  {
+    "id": "db_q10",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st003",
+    "question": "Which data structure is commonly used for database indexes?",
+    "options": ["Linked List", "B-Tree", "Stack", "Queue"],
+    "correctIndex": 1,
+    "explanation":
+        "B-Trees and their variants (like B+ Trees) are commonly used for database indexes due to their balanced structure and efficient search, insertion, and deletion operations.",
+    "difficulty": "medium",
+    "tags": ["indexing", "B-Tree", "data structures"],
+    "isActive": true,
+    "reference": "Database Internals - Alex Petrov"
+  },
+  {
+    "id": "db_q11",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st001",
+    "question": "What does an INNER JOIN return?",
+    "options": [
+      "All records from both tables",
+      "Only records that have matching values in both tables",
+      "All records from the left table",
+      "All records from the right table"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "INNER JOIN returns only the records that have matching values in both tables being joined.",
+    "difficulty": "easy",
+    "tags": ["sql", "joins", "inner join"],
+    "isActive": true,
+    "reference": "SQL Join Operations"
+  },
+  {
+    "id": "db_q12",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st001",
+    "question": "What is the difference between LEFT JOIN and RIGHT JOIN?",
+    "options": [
+      "There is no difference",
+      "LEFT JOIN returns all records from the left table, RIGHT JOIN returns all from the right table",
+      "LEFT JOIN is faster than RIGHT JOIN",
+      "RIGHT JOIN doesn't exist in SQL"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "LEFT JOIN returns all records from the left table and matching records from the right table. RIGHT JOIN does the opposite.",
+    "difficulty": "medium",
+    "tags": ["sql", "joins", "outer joins"],
+    "isActive": true,
+    "reference": "SQL Advanced Queries"
+  },
+  {
+    "id": "db_q13",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st002",
+    "question": "A table is in Second Normal Form (2NF) if:",
+    "options": [
+      "It is in 1NF and has no partial dependencies",
+      "It has a primary key",
+      "It has no repeating groups",
+      "It is in 3NF"
+    ],
+    "correctIndex": 0,
+    "explanation":
+        "2NF requires that the table is in 1NF and all non-key attributes are fully functionally dependent on the entire primary key (no partial dependencies).",
+    "difficulty": "medium",
+    "tags": ["normalization", "2NF", "normal forms"],
+    "isActive": true,
+    "reference": "Database Normalization Theory"
+  },
+  {
+    "id": "db_q14",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st002",
+    "question": "What is a transitive dependency?",
+    "options": [
+      "When a non-key attribute depends on another non-key attribute",
+      "When a key depends on another key",
+      "When all attributes depend on the primary key",
+      "When there are no dependencies"
+    ],
+    "correctIndex": 0,
+    "explanation":
+        "A transitive dependency occurs when a non-key attribute depends on another non-key attribute, which in turn depends on the primary key.",
+    "difficulty": "hard",
+    "tags": ["normalization", "dependencies", "3NF"],
+    "isActive": true,
+    "reference": "Database Design - Elmasri & Navathe"
+  },
+  {
+    "id": "db_q15",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st001",
+    "question": "Which SQL function returns the number of rows?",
+    "options": ["SUM()", "COUNT()", "AVG()", "MAX()"],
+    "correctIndex": 1,
+    "explanation":
+        "COUNT() function returns the number of rows that match a specified criterion.",
+    "difficulty": "easy",
+    "tags": ["sql", "aggregate functions", "count"],
+    "isActive": true,
+    "reference": "SQL Aggregate Functions"
+  },
+  {
+    "id": "db_q16",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st001",
+    "question": "What is the purpose of the GROUP BY clause?",
+    "options": [
+      "To sort the results",
+      "To filter records",
+      "To group rows that have the same values in specified columns",
+      "To join tables"
+    ],
+    "correctIndex": 2,
+    "explanation":
+        "GROUP BY groups rows that have the same values in specified columns into summary rows, often used with aggregate functions.",
+    "difficulty": "easy",
+    "tags": ["sql", "group by", "aggregation"],
+    "isActive": true,
+    "reference": "SQL Grouping and Aggregation"
+  },
+  {
+    "id": "db_q17",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st001",
+    "question": "What is the difference between WHERE and HAVING clauses?",
+    "options": [
+      "There is no difference",
+      "WHERE filters rows before grouping, HAVING filters groups after grouping",
+      "HAVING is faster than WHERE",
+      "WHERE is used with aggregate functions, HAVING is not"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "WHERE filters individual rows before grouping, while HAVING filters groups after the GROUP BY operation and can use aggregate functions.",
+    "difficulty": "medium",
+    "tags": ["sql", "where", "having", "filtering"],
+    "isActive": true,
+    "reference": "SQL Advanced Filtering"
+  },
+  {
+    "id": "db_q18",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st001",
+    "question":
+        "Which constraint ensures that all values in a column are different?",
+    "options": ["PRIMARY KEY", "UNIQUE", "NOT NULL", "CHECK"],
+    "correctIndex": 1,
+    "explanation":
+        "UNIQUE constraint ensures that all values in a column are different. Unlike PRIMARY KEY, a table can have multiple UNIQUE constraints.",
+    "difficulty": "easy",
+    "tags": ["constraints", "unique", "data integrity"],
+    "isActive": true,
+    "reference": "SQL Constraints"
+  },
+  {
+    "id": "db_q19",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st002",
+    "question": "What does the CHECK constraint do?",
+    "options": [
+      "Checks for NULL values",
+      "Ensures a value meets a specific condition",
+      "Checks for duplicate values",
+      "Validates foreign keys"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "CHECK constraint ensures that all values in a column satisfy a specific condition or expression.",
+    "difficulty": "medium",
+    "tags": ["constraints", "check", "validation"],
+    "isActive": true,
+    "reference": "Database Constraints and Validation"
+  },
+  {
+    "id": "db_q20",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st001",
+    "question": "What is a database view?",
+    "options": [
+      "A physical table stored on disk",
+      "A virtual table based on a SQL query",
+      "A backup of a table",
+      "An index on a table"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "A view is a virtual table based on the result set of a SQL query. It doesn't store data physically but provides a way to look at data from one or more tables.",
+    "difficulty": "easy",
+    "tags": ["views", "virtual tables", "sql"],
+    "isActive": true,
+    "reference": "Database Views and Virtual Tables"
+  },
+  {
+    "id": "db_q21",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st001",
+    "question": "What is a stored procedure?",
+    "options": [
+      "A saved SQL query",
+      "A prepared SQL code that can be saved and reused",
+      "A type of index",
+      "A backup mechanism"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "A stored procedure is a prepared SQL code that you can save and reuse. It can accept parameters and contain control-flow logic.",
+    "difficulty": "easy",
+    "tags": ["stored procedures", "sql", "database programming"],
+    "isActive": true,
+    "reference": "SQL Stored Procedures"
+  },
+  {
+    "id": "db_q22",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st003",
+    "question": "What is a database trigger?",
+    "options": [
+      "A scheduled task",
+      "A procedure that automatically executes in response to certain events",
+      "A type of constraint",
+      "A backup operation"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "A trigger is a stored procedure that automatically executes when certain events (INSERT, UPDATE, DELETE) occur on a table.",
+    "difficulty": "medium",
+    "tags": ["triggers", "automation", "database events"],
+    "isActive": true,
+    "reference": "Database Triggers and Events"
+  },
+  {
+    "id": "db_q23",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st002",
+    "question": "What is a key characteristic of NoSQL databases?",
+    "options": [
+      "They only use SQL",
+      "They require fixed schemas",
+      "They are designed for flexible, scalable data storage",
+      "They don't support queries"
+    ],
+    "correctIndex": 2,
+    "explanation":
+        "NoSQL databases are designed for flexible, scalable data storage and can handle unstructured or semi-structured data without requiring fixed schemas.",
+    "difficulty": "easy",
+    "tags": ["nosql", "database types", "scalability"],
+    "isActive": true,
+    "reference": "NoSQL Databases - Introduction"
+  },
+  {
+    "id": "db_q24",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st002",
+    "question": "Which of the following is a document-oriented NoSQL database?",
+    "options": ["Redis", "MongoDB", "Cassandra", "Neo4j"],
+    "correctIndex": 1,
+    "explanation":
+        "MongoDB is a document-oriented NoSQL database that stores data in flexible, JSON-like documents.",
+    "difficulty": "easy",
+    "tags": ["nosql", "mongodb", "document database"],
+    "isActive": true,
+    "reference": "NoSQL Database Types"
+  },
+  {
+    "id": "db_q25",
+    "quizId": "database_quiz_1",
+    "topicId": "t004",
+    "subTopicId": "t004-st003",
+    "question": "What is the purpose of database locking?",
+    "options": [
+      "To prevent unauthorized access",
+      "To control concurrent access to data",
+      "To encrypt data",
+      "To backup data"
+    ],
+    "correctIndex": 1,
+    "explanation":
+        "Database locking controls concurrent access to data, preventing conflicts when multiple transactions try to access the same data simultaneously.",
+    "difficulty": "medium",
+    "tags": ["concurrency", "locking", "transactions"],
+    "isActive": true,
+    "reference": "Database Concurrency Control"
+  }
+]

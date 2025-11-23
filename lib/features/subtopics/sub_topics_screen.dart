@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:it_mcq/core/router/app_navigator.dart';
 import 'package:it_mcq/core/theme/theme_extension.dart';
+import 'package:it_mcq/data/sources/remote/mcq_repository.dart';
 import 'package:it_mcq/data/topics_maping.dart';
 import 'package:it_mcq/features/subtopics/cubit/sub_topic_state.dart';
 import 'package:it_mcq/features/subtopics/cubit/sub_topics_cubit.dart';
-import 'package:it_mcq/features/subtopics/sub_topics_mcq_screen.dart';
+
 import 'package:it_mcq/utility/widgets/theme_text.dart';
 
 class SubTopicsPage extends StatelessWidget {
@@ -183,6 +184,7 @@ class SubTopicsPage extends StatelessWidget {
                                   MaterialPageRoute(
                                     builder: (context) => SubtopicMCQScreen(
                                       subtopicId: sub.id!,
+                                      fileUrl: "https://raw.githubusercontent.com/ruhulGit/myapp/main/data/dsa_mcq.json",
                                     ),
                                   ),
                                 );
