@@ -30,20 +30,10 @@ What's next: add your screenshots to assets/screenshots/, ensure the firebase co
 
 ## Demo / Screenshots
 
-Add screenshots to `assets/screenshots/` (recommended). Example placeholders used below — replace them with your own images:
 
-<img src="[https://github.com/md-ruhulamin/delicious/blob/main/figma_delicious.png](https://github.com/md-ruhulamin/it_mcq/blob/main/Screenshot%20from%202025-11-06%2018-39-23.png)" alt="App UI Preview" width="600">
-- assets/screenshots/quiz_list.png
-- assets/screenshots/question.png
-- assets/screenshots/result.png
 
-Example in Markdown (after adding images to repo):
-```markdown
-![Home screen](assets/screenshots/home.png)
-![Quiz list](assets/screenshots/quiz_list.png)
-![Question view](assets/screenshots/question.png)
-![Result screen](assets/screenshots/result.png)
-```
+<img src="https://github.com/md-ruhulamin/skill_stack/blob/main/Screenshot%20from%202025-11-06%2019-04-39.png" alt="App UI Preview" width="100%">
+
 
 ## Features
 
